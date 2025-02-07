@@ -24,7 +24,7 @@ function startApp() {
   const app = express();
 
   app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: process.env.RENDER ? 'https://repd-client-server-dashboard.surge.sh' : 'http://localhost:5173'
   }));
 
   app.get('/dashboard', (req, res) => {
